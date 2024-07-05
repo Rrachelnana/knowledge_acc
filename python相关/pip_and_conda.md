@@ -3,8 +3,11 @@
 联系：conda与pip都是包管理器，有一些重叠功能
 
 区别：conda是一个跨平台的包和环境管理器，安装的包是二进制的，同时安装包不限于python包，还可以是c、c++库、R库以及其他软件；即python安装python包，conda可安装用任何语言编写的软件包；
+
 使用pip之前必须先安装python解释器；而conda可直接安装python包和python解释器
+
 conda能创建独立环境，可包含不同版本的python和包，而pip不支持内置独立环境，必须依赖其他工具，如virtual来创建隔离环境
+
 conda和pip在实现环境依赖时也不同，pip不能确保所有包的依赖关系同时满足，而conda使用satisfiability (SAT) 来检验包的所有依赖是否满足
 
 
@@ -90,6 +93,7 @@ conda config --add channels https://mirrors.aliyun.com/pypi/simple/
 
 
 实际命令操作
+
 1.conda增加源
 ```
 [ bin]$ conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/r
@@ -99,11 +103,13 @@ conda config --add channels https://mirrors.aliyun.com/pypi/simple/
 add_anaconda_token: True
 add_pip_as_python_dependency: True
 ```
+
 2.通过豆瓣源使用pip安装gunicorn包
 ```
 pip install gunicorn -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gunicorn
 ```
+
 3.设置阿里源为主源
 ```
 [gpu03 bin]$ pip config set global.index-url http://mirrors.aliyun.com/pypi/simple/
@@ -111,6 +117,7 @@ Writing to /home/XX/.config/pip/pip.conf
 [gpu03 bin]$ pip config set install.trusted-host mirrors.aliyun.com
 Writing to /home/XX/.config/pip/pip.conf
 ```
+
 
 
 设置pip，给pip添加镜像源，然后用pip install  包 进行安装
