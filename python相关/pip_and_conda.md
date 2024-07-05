@@ -33,7 +33,10 @@ source activate welding-parameter
 ```
 
 
-首先，进入requirements.txt文件所在目录。之后，使用命令pip install -r requirements.txt
+首先，进入requirements.txt文件所在目录。
+
+之后，使用命令pip install -r requirements.txt
+
 退出虚拟环境：conda deactivate
 
 
@@ -86,6 +89,8 @@ conda config --add channels https://mirrors.aliyun.com/pypi/simple/
 ```
 
 
+实际命令操作
+1.conda增加源
 ```
 [ bin]$ conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/r
 [ bin]$ conda config --add channels http://mirrors.aliyun.com/anaconda/pkgs/msys2
@@ -94,12 +99,12 @@ conda config --add channels https://mirrors.aliyun.com/pypi/simple/
 add_anaconda_token: True
 add_pip_as_python_dependency: True
 ```
-
+2.通过豆瓣源使用pip安装gunicorn包
 ```
 pip install gunicorn -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gunicorn
 ```
-
+3.设置阿里源为主源
 ```
 [gpu03 bin]$ pip config set global.index-url http://mirrors.aliyun.com/pypi/simple/
 Writing to /home/XX/.config/pip/pip.conf
@@ -107,4 +112,8 @@ Writing to /home/XX/.config/pip/pip.conf
 Writing to /home/XX/.config/pip/pip.conf
 ```
 
+
 设置pip，给pip添加镜像源，然后用pip install  包 进行安装
+
+
+
