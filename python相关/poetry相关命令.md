@@ -1,28 +1,34 @@
-poetry相关命令：
+##poetry相关命令：
+
 1.安装poetry
+```
 # windows
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python3 -
 # linux
 curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr/local/poetry python3 -
-
+```
 对poetry添加环境变量，window 默认安装路径在：C:\Users\your_user_name\AppData\Roaming\pypoetry\venv\Scripts，需要将其添加到环境变量中。
 
 linux 默认安装路径在：~/.local/share/pypoetry/venv/bin/poetry，可以通过POETRY_HOME指定安装目录，需要将其添加到环境变量中。
 
 2.配置poetry
+```
 # 修改缓存目录
+
 poetry config cache-dir "这里填写你的poetry缓存目录"
 # 修改pypi源  清华大学源
 poetry config repositories.pypi "https://pypi.tuna.tsinghua.edu.cn/simple"
 # 配置pypi源 豆瓣源
 # poetry config repositories.pypi "https://pypi.doubanio.com/simple"
-
+```
 3.poetry初始化
 poetry init，此时会生成三个文件：poetry.lock、poetry.toml、pyproject.toml
 若是加载其他人的poetry，此时已有这三个文件，则只需执行poetry install即可。
 
 4.poetry其他命令
+```
 # 使用下面的命令创建虚拟环境，默认使用当前环境变量中的Python解释器
+
 poetry env use python
 # 如果需要指定特定Python解释器，指定Python解释器路径，下面的命令会使用/usr/local/bin/python3.12版本环境一个环境
 poetry env use /usr/local/bin/python3.12
@@ -42,3 +48,4 @@ poetry install --no-root --with dev
 
 # 导出到requirements.txt文件
 poetry export -f requirements.txt --output requirements.txt
+```
