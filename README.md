@@ -1,2 +1,2 @@
-# python_and_others
-python相关资料积累
+# knoledge_acc
+llm_python_and_others相关资料积累
